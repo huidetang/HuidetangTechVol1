@@ -22,12 +22,12 @@ language: ja
 
 # 書名
 # 読みを入れる例 booktitle: {name: "Re:VIEW EPUBサンプル", file-as: "リビューイーパブサンプル"}
-booktitle: "現代焚書テンプレート"
-subtitle: "副題"
+booktitle: "恢徳堂Tech vol.1"
+subtitle: "いろいろやってみよう"
 
 # 著者名。「, 」で区切って複数指定できる
 # 読みを入れる例 aut: [{name: "青木峰郎", file-as: "アオキミネロウ"}, {name: "武藤健志", file-as: "ムトウケンシ"}, {name: "高橋征義", file-as: "タカハシマサヨシ"}, {name: "角征典", file-as: "カドマサノリ"}]
-aut: ["ヨーシャ"]
+aut: [{name: "るいざ・しゃーろっと", file-as: "ルイザ・シャーロット"}]
 
 # 以下はオプション
 # 以下はオプション(autと同じように配列書式で複数指定可能)。
@@ -59,7 +59,7 @@ aut: ["ヨーシャ"]
 # a-pbl, pbl: 出版社（発行所） ※ サークル名はここに設定するとよい
 a-pbl: 恢徳堂
 # a-prt, prt: 印刷所
-prt: ねこのしっぽ
+prt: 自宅のプリンタ
 # a-red, red: 項目の枠組起草者
 # a-rev, rev: 評論者
 # a-spn, spn: 援助者
@@ -67,17 +67,17 @@ prt: ねこのしっぽ
 # a-trc, trc: 筆記・タイプ作業者
 # a-trl, trl: 翻訳者
 
-contact: "ヨーシャ(iosha@huideyeren.info)"
+contact: "るいざ・しゃーろっと(louisa.vrc@gmail.com)"
 
 # 刊行日(省略した場合は実行時の日付)
-date: 2021-12-31
+date: 2023-08-13
 # 発行年月。YYYY-MM-DD形式による配列指定。省略した場合はdateを使用する
 # 複数指定する場合は次のように記述する
 # [["初版第1刷の日付", "初版第2刷の日付"], ["第2版第1刷の日付"]]
 # 日付の後ろを空白文字で区切り、任意の文字列を置くことも可能。
-history: [["2021-12-31"]]
+history: [["2023-08-13"]]
 # 権利表記(配列で複数指定可)
-rights: (C) 2021 恢徳堂
+rights: (C) 2023 恢徳堂
 # description: 説明
 # subject: 短い説明用タグ(配列で複数指定可)
 # type: 書籍のカテゴリーなど(配列で複数指定可)
@@ -120,7 +120,7 @@ toclevel: 1
 secnolevel: 1
 
 # 本文中に目次ページを作成するか。省略した場合はnull (作成しない)
-toc: true
+toc: null
 
 # EPUB2標準の目次(NCX)以外に物理目次ファイルを作成するか。省略した場合はnull (作成しない)
 # ePUB3においてはこの設定によらず必ず作成される
@@ -134,7 +134,7 @@ toc: true
 coverimage: cover.jpg
 #
 # 表紙の後に大扉ページを作成するか。省略した場合はtrue (作成する)
-# titlepage: true
+titlepage: null
 #
 # 自動生成される大扉ページを上書きするファイル。ファイル名を指定すると大扉として入る (PDFMaker向けにはLaTeXソース断片、EPUBMaker向けにはHTMLファイル)
 # titlefile: null
@@ -208,7 +208,7 @@ contentdir: chapter
 # (文字幅を考慮した行数計測には、別途unicode-eaw gemファイルが必要)
 # ページあたりの行数文字数を用紙サイズで指定する(A5 or B5)
 # page_metric: A5
-page_metric: B5
+page_metric: A5
 #
 # あるいは、配列で指定することもできる
 # 各数字の意味は、順にリストの行数、リストの1行字数、テキストの行数、テキストの1行字数
@@ -420,20 +420,20 @@ pdfmaker:
   #
   # 索引を作成するか。trueにすると索引作成が有効になる
   # makeindex: null
-  makeindex: true
+  makeindex: null
   # 索引作成コマンド
   # makeindex_command: mendex
   # 索引作成コマンドのオプション
   # makeindex_options: "-f -r -I utf8"
   # 索引作成コマンドのスタイルファイル
-  makeindex_sty: index.ist
+  # makeindex_sty: index.ist
   # 索引作成コマンドの辞書ファイル
   # makeindex_dic: null
-  makeindex_dic: sakuin.dic
+  # makeindex_dic: sakuin.dic
   # MeCabによる索引読み探索を使うか
-  makeindex_mecab: true
+  # makeindex_mecab: true
   # MeCabの読みの取得オプション
-  makeindex_mecab_opts: "-Oyomi"
+  # makeindex_mecab_opts: "-Oyomi"
   # 奥付を作成するか。trueを指定するとデフォルトの奥付、ファイル名を指定するとそれがcolophon.htmlとしてコピーされる
   colophon: true
   # 表紙挿入時に表紙のページ番号名を「cover」とし、偶数ページ扱いにして大扉前に白ページが入るのを防ぐ。デフォルトはtrue

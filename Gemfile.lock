@@ -1,0 +1,43 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    eim_xml (0.0.4)
+    image_size (3.3.0)
+    math_ml (0.14)
+      eim_xml
+    mecab (0.996)
+    nokogiri (1.15.3-arm64-darwin)
+      racc (~> 1.4)
+    pastel (0.8.0)
+      tty-color (~> 0.5)
+    psych (3.3.4)
+    racc (1.7.1)
+    rake (13.0.6)
+    review (5.8.0)
+      image_size
+      rexml
+      rouge
+      rubyzip
+      tty-logger
+    rexml (3.2.5)
+    rouge (4.1.2)
+    rubyzip (2.3.2)
+    tty-color (0.6.0)
+    tty-logger (0.6.0)
+      pastel (~> 0.8)
+
+PLATFORMS
+  arm64-darwin-21
+
+DEPENDENCIES
+  math_ml
+  mecab
+  nokogiri
+  psych (< 4.0.0)
+  rake
+  review
+  rexml
+  rubyzip
+
+BUNDLED WITH
+   2.3.7
