@@ -82,10 +82,10 @@ jobs:
         run: pwd | python3 svg.py >> .svg.log
       - name: Show .svg.log
         run: cat .svg.log
-      # - name: Rotate images.
-      #   run: pwd | python3 rotate.py >> .rotate.log
-      # - name: Show .rotate.log
-      #   run: cat .rotate.log
+      - name: Grayscaling images.
+        run: pwd | python3 grayscaling.py >> .grayscaling.log
+      - name: Show .grayscaling.log
+        run: cat .grayscaling.log
       - name: Build PDF.
         run: bundle exec rake clean pdf
       - name: Upload artifact.
