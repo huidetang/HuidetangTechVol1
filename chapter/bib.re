@@ -14,6 +14,11 @@
   https://creators.vrchat.com/avatars/avatar-performance-ranking-system/#quest-limits
 //}
 
+//bibpaper[umakachan][うまかちゃんさんのVRoidアバターQuest対応の記事]{
+  note: VRoidが正式版になったのでQuest版の完全対応手順を考えてみた奴 by うまかちゃん
+  https://note.com/umakachan/n/n0768d611845a
+//}
+
 //embed[latex]{
 \end{thebibliography}
 //}
