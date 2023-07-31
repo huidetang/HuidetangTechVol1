@@ -61,7 +61,7 @@ Line Renderers	0	0	0	1
 私も実際に一回対応してみたのですが、どうもうまく切り抜けずゴミのようなものが残ってしまいます。
 なので、私は確実に対応可能な顔の対応のみ行い、服の透過は諦める感じで進めました。
 
-//image[vanilla-vroid][最少状態のVRoidアバター][scale=html::style="transform: scale(0.6);",latex::scale=0.6]{
+//image[vanilla-vroid][最少状態のVRoidアバター]{
     衣装：ららるーのアトリエ様
 //}
 
