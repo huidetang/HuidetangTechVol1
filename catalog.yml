@@ -1,12 +1,12 @@
 PREDEF:
-  # - preface.re
+  - preface.re
 
 CHAPS:
-  - test.re
+  - vroid-quest.re
 
 APPENDIX:
 
 POSTDEF:
-  # - postscript.re
-  # - bib.re
+  - postscript.re
+  - bib.re
 
