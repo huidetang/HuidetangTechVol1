@@ -20,7 +20,7 @@ VRChatのQuest版やAndroid版でアバターを使うには以下のような�
 
 で、公式の情報@<bib>{VRCPerformanceRanks}によれば、Quest版アバターのランク付けについては以下の通りとなっています。
 
-//image[QuestAvatarRank][Quest版アバターのランク付け]{
+//image[quest-avatar-ranks][Quest版アバターのランク付け]{
     VRChat公式より
 //}
 
@@ -40,7 +40,7 @@ VRChatのQuest版やAndroid版でアバターを使うには以下のような�
 私も実際に一回対応してみたのですが、どうもうまく切り抜けずゴミのようなものが残ってしまいます。
 なので、私は確実に対応可能な顔の対応のみ行い、服の透過は諦める感じで進めました。
 
-//image[vanilla-vroid][最少状態のVRoidアバター][scale=0.8]{
+//image[vanilla-vroid][最少状態のVRoidアバター][scale=0.6]{
     競泳水着：ららるーのアトリエ様
 //}
 
@@ -49,9 +49,10 @@ VRChatのQuest版やAndroid版でアバターを使うには以下のような�
 しかも、ボーンも95個あります。
 マテリアルに関しては12個もあります。
 しかも、VRMの揺れものも付いている状態です。
-この状態でそのままアップロードしてもVeryPoorにしかなりません。
+特に、髪が長いこの子ではボーンが増えてしまわざるを得ません。
+そして、この状態でそのままアップロードしてもVeryPoorにしかなりません。
 
-//image[sorochka-vroid][ウクライナ民族衣装を着せたVRoidアバター][scale=0.8]{
+//image[sorochka-vroid][ウクライナ民族衣装を着せたVRoidアバター][scale=0.6]{
     ウクライナ民族衣装：鶏肉工場様
 //}
 
@@ -66,4 +67,36 @@ VRChatのQuest版やAndroid版でアバターを使うには以下のような�
 残念ながら、UnityとVRoid Studioだけではたとえ水着だとしてもQuestでまともに表示させるアバターを作るのは難しいでしょう。
 ボーン数を削ることに関してはかなり難しいですが、テクスチャを重ねてポリゴンを削る所まではBlenderでなんとかできます。
 なので、早速VRM出力していきましょう。
+ひとまず髪を短くしたアバター@<fn>{short-hair}を用意し、出力してみるとボーン数は89、これならポリゴン数を削ればFallbackにできるかもしれません。
+
+//image[short-hair][髪を短くしてVRM出力][scale=0.6]{
+    【使用衣裳】白ワンピ：星井まゆき星空通販様、スク水：ここなふぁくとりー様、桜の髪飾り：リザのアトリエ様
+//}
+
+//footnote[short-hair][【使用衣裳】白ワンピ：星井まゆき星空通販様、スク水：ここなふぁくとりー様、桜の髪飾り：リザのアトリエ様]
+
+さて、ここからはBlenderを使うのですが、必ず2系のBlenderを使用してください。
+かつ、以下のプラグインが必要になります。
+
+ * VRM Add-on for Blender@<fn>{vrm-blender}
+ * Cats Blender Plugin@<fn>{cats-blender}
+
+//footnote[vrm-blender][https://vrm-addon-for-blender.info/ja/]
+//footnote[cats-blender][https://github.com/absolute-quantum/cats-blender-plugin]
+
+これらを使用するとVRMをBlenderで扱うことができるようになります。
+まず、Blenderを開くと最初に四角形が表示されていますが、これらは消します。
+その後、使用するVRMをインポートすると画面にVRMアバターが表示されます。
+
+//image[in-blender][blenderへインポートしたところ][scale=0.6]{
+//}
+
+まずすべきは、Model Optionsを開き、マテリアル単位にメッシュを分割することです。
+それが終わったら、Decimationのタブを開きます。
+まずはCustomを選択し、全てのシェイプキーを保護します。
+その後にSmartを選択し、Save Fingersを選んでTrisは10,000にしてQuick Decimationをクリックします。
+これでポリゴン数が10,000以下になります。
+
+//image[decimated][ポリゴン数を減らしたところ][scale=0.6]{
+//}
 
