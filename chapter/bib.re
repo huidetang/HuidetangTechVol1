@@ -19,6 +19,11 @@
   https://note.com/umakachan/n/n0768d611845a
 //}
 
+//bibpaper[vdcm][ビデカメさんのVCCのコマンドラインインターフェースの記事]{
+  Zenn: 【VRChat】VCCをCLIで使う。 by ビデカメ
+  https://zenn.dev/ytjvdcm/articles/a5b6318b8a3995
+//}
+
 //embed[latex]{
 \end{thebibliography}
 //}
