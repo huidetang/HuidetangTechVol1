@@ -59,9 +59,9 @@ jobs:
           npx textlint -f checkstyle chapter/*.re wiki/*.md README.md \
           | reviewdog -f=checkstyle -name="textlint" -diff="git diff ${{ github.event.pull_request.base.ref }}" -reporter=github-pr-review -level="error"
 
-  pdf:
+  paper:
     needs: reviewdog-github-check
-    name: Make PDF
+    name: Make Papaer PDF
     runs-on: ubuntu-latest
     container:
       image: huideyeren/review
@@ -91,11 +91,11 @@ jobs:
       - name: Upload artifact.
         uses: actions/upload-artifact@v2
         with:
-          name: book.pdf
+          name: book-Paper.pdf
           path: book.pdf
-  epub:
+  ebook:
     needs: reviewdog-github-check
-    name: Make EPUB
+    name: Make eBook PDF
     runs-on: ubuntu-latest
     container:
       image: huideyeren/review
@@ -112,10 +112,14 @@ jobs:
         run: pwd | bash ./plantuml.sh >> .plantuml.log
       - name: Show .plantuml.log
         run: cat .plantuml.log
-      - name: Build EPUB.
-        run: bundle exec rake clean epub
+      - name: Convert SVG to PDF
+        run: pwd | python3 svg.py >> .svg.log
+      - name: Show .svg.log
+        run: cat .svg.log
+      - name: Build PDF.
+        run: bundle exec rake clean pdf
       - name: Upload artifact.
         uses: actions/upload-artifact@v2
         with:
-          name: book.epub
-          path: book.epub
+          name: book-eBook.pdf
+          path: book.pdf
