@@ -88,11 +88,39 @@ VRChatのQuest版やAndroid版でアバターを使うには以下のような�
 
  * VRM Add-on for Blender@<fn>{vrm-blender}
  * Cats Blender Plugin@<fn>{cats-blender}
+ * material-combiner-addon@<fn>{material-combiner-addon}
 
 //footnote[vrm-blender][https://vrm-addon-for-blender.info/ja/]
 //footnote[cats-blender][https://github.com/absolute-quantum/cats-blender-plugin]
+//footnote[material-combiner-addon][https://github.com/Grim-es/material-combiner-addon]
+
 
 これらを使用するとVRMをBlenderで扱うことができるようになります。
+
+なお、BlenderはPythonというプログラミング言語の実行環境が必要です。
+OSに別のPythonがインストールされている場合、material-combiner-addonで必要なPillowという画像処理ライブラリのインストールに失敗する場合があります。
+その場合は、Windowsの場合は以下のコマンドを実行する必要があります。
+
+//cmd{
+> set PythonPath="Your\Copied\Path\To\Python\bin\Folder"
+> %PythonPath%\python.exe -m pip install Pillow --user --upgrade
+//}
+
+なお、「Your\Copied\Path\To\Python\bin\Folder」の部分は各自のフォルダに読み替えてください。
+
+また、世の中にはMacでアバター改変を行っている方もいると思いますが、Macの場合は以下のコマンドを一個一個入力していく必要があります。
+
+//cmd{
+$ /Applications/Blender.app/Contents/MacOS/Blender -b --python-expr "__import__('ensurepip')._bootstrap()" 
+$ /Applications/Blender.app/Contents/MacOS/Blender -b --python-expr "__import__('pip._internal')._internal.main(['install', '-U', 'pip', 'setuptools', 'wheel'])"
+$ /Applications/Blender.app/Contents/MacOS/Blender -b --python-expr "__import__('pip._internal')._internal.main(['install', 'Pillow'])"
+//}
+
+この、「/Applications/Blender.app/Contents/MacOS/Blender」についてですが、Homebrew Caskでインストールした場合は別の場所になります。
+その場合も書き換えが必要です。
+
+=== Blenderを開いたら
+
 まず、Blenderを開くと最初に四角形が表示されていますが、これらは消します。
 その後、使用するVRMをインポートすると画面にVRMアバターが表示されます。
 
@@ -163,7 +191,18 @@ VRMを保存し終わったらVCCとUnityの世界に帰れます。
 実はVCCにはコマンドラインインターフェースがあります。
 コマンドラインインターフェースとなるととっつきにくい印象がありますが、一度スクリプトを設定してくれるとインストールするアセットを一発で設定できるので使いやすいです。
 まずは、.NET 6系をインストールします。これはVCCのコマンドラインインターフェースを使うのに必要です。
-インストールしたら、次のコマンドを入力してリポジトリを追加しましょう。
+なお、別のバージョンの.NETがインストールされている場合、VCCのコマンドラインインターフェースに失敗します。
+その場合は、.NET 6をインストールした上で以下のような.NETのバージョンを指定するファイルをホームフォルダに配置すると、全てのフォルダで指定したバージョンの.NETが使われます。
+
+//source[global.json]{
+{
+  "sdk": {
+    "version": "6.0.408"
+  }
+}
+//}
+
+.NET 6をインストールしたら、次のコマンドを入力してVCCのコマンドラインインターフェースをインストールしましょう。
 ここからの内容はビデカメさんの記事に従います。
 
 //cmd{
@@ -207,7 +246,7 @@ VRMを保存し終わったらVCCとUnityの世界に帰れます。
 > @<b>{vpm check unity}
 //}
 
-ここが終わったら、リポジトリを追加しておきます。
+ここが終わったら、プロジェクトで使うリポジトリを追加しておきます。
 
 //cmd{
 > @<b>{vpm add repo <リポジトリのパス>}
@@ -229,6 +268,8 @@ VRMを保存し終わったらVCCとUnityの世界に帰れます。
  * https://mmmaellon.github.io/MMMaellonVCCListing/index.json
  * https://vpm.rerac.dev/index.json
  * https://suzuryg.github.io/vpm-repos/vpm.json
+ * https://vpm.narazaka.net/index.json
+ * https://www.negura-karasu.net/vpm/
 
 ここまでリポジトリの設定が終わったら、これらのリポジトリを一発で設定しましょう。
 ファイル名は「vpm-install.ps1」として、以下の内容をコピペしておきましょう。
@@ -237,19 +278,25 @@ VRMを保存し終わったらVCCとUnityの世界に帰れます。
 //source[vpm-install.ps1]{
 #!/usr/local/microsoft/powershell/7/pwsh
 
-vpm add package com.vrchat.core.vpm-resolver && `
-vpm add package com.vrchat.base && `
-vpm add package com.vrchat.avatars && `
-vpm add package dev.vrlabs.av3manager && `
-vpm add package vrchat.blackstartx.gesture-manager && `
-vpm add package vrchat.jordo.easyquestswitch && `
-vpm add package jp.lilxyzw.liltoon && `
-vpm add package jp.lilxyzw.avatar-utils && `
-vpm add package nadena.dev.modular-avatar && `
-vpm add package com.anatawa12.avatar-optimizer && `
-vpm add package jp.pokemori.vrm-converter-for-vrchat && `
-vpm add package com.github.kurotu.vrc-quest-tools && `
-vpm add package jp.whiteflare.avatartools && `
+vpm add package com.vrchat.core.vpm-resolver && ` # VPM Resolver
+vpm add package com.vrchat.base && ` # VRChat SDK Base
+vpm add package com.vrchat.avatars && ` # VRChat SDK Avatar
+vpm add package dev.vrlabs.av3manager && ` # Avatar 3.0 Manager
+vpm add package vrchat.blackstartx.gesture-manager && ` # Gesture Manager
+vpm add package vrchat.jordo.easyquestswitch && ` # Easy Quest Switch
+vpm add package jp.lilxyzw.liltoon && ` # lilToon
+vpm add package jp.lilxyzw.avatar-utils && ` # lilToon Avatar Utility
+vpm add package nadena.dev.modular-avatar && ` # Modular Avatar
+vpm add package com.anatawa12.avatar-optimizer && ` # Avatar Optimizer
+vpm add package jp.pokemori.vrm-converter-for-vrchat && ` # VRM Converter for VRChat
+vpm add package com.github.kurotu.vrc-quest-tools && ` # VRC Quest Tools
+vpm add package jp.whiteflare.avatartools && ` # AvatarTools
+vpm add package yagihata.radialinventorysystem.v4 && ` # Radial Inventory System V4
+vpm add package net.narazaka.vrchat.avatar-menu-creater-for-ma && ` # Avatar Menu Creator for MA
+vpm add package net.narazaka.vrchat.manual-baker && ` # Manual Baker
+vpm add package net.narazaka.unity.bone-tools.unused-bones-by-references-tool && ` # UnusedBonesByReferencesTool
+vpm add package jp.suzuryg.face-emo && ` # FaceEmo
+vpm add package jp.whiteflare.unlitwf && ` # UnlitWF_Shader
 vpm check project
 //}
 
