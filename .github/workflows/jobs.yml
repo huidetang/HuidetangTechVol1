@@ -91,5 +91,5 @@ jobs:
       - name: Upload artifact.
         uses: actions/upload-artifact@v2
         with:
-          name: book.pdf
-          path: book.pdf
+          name: LouisaTechVol1Rev2.pdf
+          path: LouisaTechVol1Rev2.pdf
