@@ -24,6 +24,13 @@
   https://zenn.dev/ytjvdcm/articles/a5b6318b8a3995
 //}
 
+//bibpaper[metacul][メタカル最前線の有用なVCCツールの記事]{
+  メタカル最前線: 
+    【コラム】VCCにこれは入れておけ！　アバター改変の便利ツール紹介 by 東雲りん
+  https://metacul-frontier.com/?p=7292
+//}
+
+
 //embed[latex]{
 \end{thebibliography}
 //}

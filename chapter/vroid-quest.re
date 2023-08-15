@@ -108,16 +108,20 @@ OSに別のPythonがインストールされている場合、material-combiner-
 
 なお、「Your\Copied\Path\To\Python\bin\Folder」の部分は各自のフォルダに読み替えてください。
 
-また、世の中にはMacでアバター改変を行っている方もいると思いますが、Macの場合は以下のコマンドを一個一個入力していく必要があります。
+また、世の中にはMacでアバター改変を行っている方もいると思いますが、Macの場合は少々面倒です。
+まず、Blenderを開きましょう。
+その後で、ShiftキーとF4キーを同時に押すとPythonコンソールが開きます。
+その後、以下のコードを貼り付ければPillowがインストールされます。
 
-//cmd{
-$ /Applications/Blender.app/Contents/MacOS/Blender -b --python-expr "__import__('ensurepip')._bootstrap()" 
-$ /Applications/Blender.app/Contents/MacOS/Blender -b --python-expr "__import__('pip._internal')._internal.main(['install', '-U', 'pip', 'setuptools', 'wheel'])"
-$ /Applications/Blender.app/Contents/MacOS/Blender -b --python-expr "__import__('pip._internal')._internal.main(['install', 'Pillow'])"
+//source[blender-pillow-install.py]{
+__import__('ensurepip')._bootstrap()
+__import__('pip._internal')\
+    ._internal.main(['install', '-U', 'pip', 'setuptools', 'wheel'])
+__import__('pip._internal')._internal.main(['install', 'Pillow'])
+
 //}
 
-この、「/Applications/Blender.app/Contents/MacOS/Blender」についてですが、Homebrew Caskでインストールした場合は別の場所になります。
-その場合も書き換えが必要です。
+このようにして、Pillowをインストールし終えたらUnityでの改変準備は完了です。
 
 === Blenderを開いたら
 
@@ -273,35 +277,63 @@ VRMを保存し終わったらVCCとUnityの世界に帰れます。
 
 ここまでリポジトリの設定が終わったら、これらのリポジトリを一発で設定しましょう。
 ファイル名は「vpm-install.ps1」として、以下の内容をコピペしておきましょう。
-このスクリプトを実行すれば一発です。バージョンを上げる際にもこのスクリプトを実行すると更新してくれます。
+このスクリプトを実行すれば指定した全てのパッケージがインストールされます。
+パッケージのバージョンアップも、このスクリプトを再度実行すると全て更新してくれます。
+なので、いちいちVCCでそれぞれのパッケージのバージョンアップを手動でしなくても済むのです。
 
 //source[vpm-install.ps1]{
 #!/usr/local/microsoft/powershell/7/pwsh
 
-vpm add package com.vrchat.core.vpm-resolver && ` # VPM Resolver
-vpm add package com.vrchat.base && ` # VRChat SDK Base
-vpm add package com.vrchat.avatars && ` # VRChat SDK Avatar
-vpm add package dev.vrlabs.av3manager && ` # Avatar 3.0 Manager
-vpm add package vrchat.blackstartx.gesture-manager && ` # Gesture Manager
-vpm add package vrchat.jordo.easyquestswitch && ` # Easy Quest Switch
-vpm add package jp.lilxyzw.liltoon && ` # lilToon
-vpm add package jp.lilxyzw.avatar-utils && ` # lilToon Avatar Utility
-vpm add package nadena.dev.modular-avatar && ` # Modular Avatar
-vpm add package com.anatawa12.avatar-optimizer && ` # Avatar Optimizer
-vpm add package jp.pokemori.vrm-converter-for-vrchat && ` # VRM Converter for VRChat
-vpm add package com.github.kurotu.vrc-quest-tools && ` # VRC Quest Tools
-vpm add package jp.whiteflare.avatartools && ` # AvatarTools
-vpm add package yagihata.radialinventorysystem.v4 && ` # Radial Inventory System V4
-vpm add package net.narazaka.vrchat.avatar-menu-creater-for-ma && ` # Avatar Menu Creator for MA
-vpm add package net.narazaka.vrchat.manual-baker && ` # Manual Baker
-vpm add package net.narazaka.unity.bone-tools.unused-bones-by-references-tool && ` # UnusedBonesByReferencesTool
-vpm add package jp.suzuryg.face-emo && ` # FaceEmo
-vpm add package jp.whiteflare.unlitwf && ` # UnlitWF_Shader
+vpm add package com.vrchat.core.vpm-resolver && `
+vpm add package com.vrchat.base && `
+vpm add package com.vrchat.avatars && `
+vpm add package dev.vrlabs.av3manager && `
+vpm add package vrchat.blackstartx.gesture-manager && `
+vpm add package vrchat.jordo.easyquestswitch && `
+vpm add package jp.lilxyzw.liltoon && `
+vpm add package jp.lilxyzw.avatar-utils && `
+vpm add package nadena.dev.modular-avatar && `
+vpm add package com.anatawa12.avatar-optimizer && `
+vpm add package jp.pokemori.vrm-converter-for-vrchat && `
+vpm add package com.github.kurotu.vrc-quest-tools && `
+vpm add package jp.whiteflare.avatartools && `
+vpm add package yagihata.radialinventorysystem.v4 && `
+vpm add package net.narazaka.vrchat.avatar-menu-creater-for-ma && `
+vpm add package net.narazaka.vrchat.manual-baker && `
+vpm add package net.narazaka.unity.bone-tools.unused-bones-by-references-tool && `
+vpm add package jp.suzuryg.face-emo && `
+vpm add package jp.whiteflare.unlitwf && `
 vpm check project
 //}
 
-なお、PowerShellはMac用もあるのでPowerShellをインストールすればなんとMacでも動きます。
+スクリプトの中でインストールするパッケージのリストは以下の通りです。
+なお、このリストの中にはメタカル最前線の記事@<bib>{metacul}で指定されている有用なツールが全て含まれています。
+このリストはスクリプトで指定されている順に並べられています。
+
+ * VPM Resolver
+ * VRChat SDK Base
+ * VRChat SDK Avatar
+ * Avatar 3.0 Manager
+ * Gesture Manager
+ * Easy Quest Switch
+ * lilToon
+ * lilToon Avatar Utility
+ * Modular Avatar
+ * Avatar Optimizer
+ * VRM Converter for VRChat
+ * VRCQuestTools
+ * AvatarTools
+ * Radial Inventory System V4
+ * Avatar Menu Creator for Modular Avatar
+ * Manual Baker
+ * UnusedBonesByReferencesTool
+ * FaceEmo
+ * UnlitWF_Shader
+
+そして、Macの方に朗報です。
+PowerShellはMac用もあるのでPowerShellをインストールすればなんとMacでも動きます。
 これを使えば、必要なパッケージが一発で入るという仕組みなのです。
+
 ここでlilToonなどPC側でしか使わないアセットを入れているのに疑問を感じた方もいるかもしれません。
 その理由は、PC版とUnityプロジェクトを共存させると手っ取り早く作りやすいからです。
 詳しくはこのあとに記載します。
@@ -346,12 +378,19 @@ VRMをコンバートする際にメッシュは統合されてしまいます�
 過去には衣装とプラットフォームごとにプロジェクトを作っていましたが、それだといちいちアセットをインストールするしかありません。
 しかも、毎回表情の設定をするのは手間です。
 ここでPC版とQuest版を共存させた意味が出てきます。
-シェイプキーが同じであれば、FXは使い回せるのです。
-これがあれば、VRMで表情を設定する手間を飛ばせます。
+シェイプキーが同じであれば、FXやActionなどは使い回せるのです。
+これがあれば、VRMで表情やモーションを個別に設定する手間を省けます。
 他のアセットも同様です。
 さらには、設定のコピーもしやすいです。
 なので、一つのプロジェクトでいろいろなアバターを作る方式に回帰しました。
 これによって、アバター改良速度が大いに上がったと思っています。
+
+なお、PC版用のアバターには別のVRMファイルを用意しています。
+PC版はVRoid Studioで出力したそのままのVRMファイルを使ってかまいません。
+もちろん、Blenderでメッシュをあらかじめ分けておくことで、着せている服を脱がすこともできます。
+Quest用にポリゴン数を減らしたものを使ってもよいのですが、顔が破綻するなど見た目がよくなくなるのでPC用はPC用で作ってしまうのがおすすめです。
+さらに、PC版では透過表現も使えるので、PC版は透過にしつつQuest版では透過表現を使わないこともできるわけです。
+以上のことから、同じプロジェクトでPC版とQuest版のアバターを衣装ごとに作る方が作りやすいといえるでしょう。
 
 == おわりに
 
