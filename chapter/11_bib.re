@@ -4,7 +4,12 @@
 \begin{thebibliography}{99}
 //}
 
-//bibpaper[VRCQuest][VRC公式のQuest対応についてのページ]{
+//bibpaper[VRCQuestLimit][VRChat公式のAndroid系環境での制約についてのページ]{
+  VRChat: Quest Content Optimization @<br>{}
+  https://creators.vrchat.com/platforms/android/quest-content-limitations/
+//}
+
+//bibpaper[VRCQuest][VRChat公式のQuest対応についてのページ]{
   VRChat: Quest Content Optimization @<br>{}
   https://creators.vrchat.com/platforms/android/quest-content-optimization/
 //}
