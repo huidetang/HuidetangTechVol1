@@ -16,5 +16,5 @@ APPENDIX:
 
 POSTDEF:
   - 10_postscript.re
-  - 11_bib.re
+  - bib.re
 
