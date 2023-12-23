@@ -8,11 +8,11 @@ VRChatのAndroid版でアバターを使うには制限@<bib>{VRCQuestLimit}が�
 イベントによっては重くなるのでVeryPoorのアバターを使っている人の参加をお断りすることがあり、PoorランクやMediumランクを目指す改変者も多いです。
 さらに、Androidのモバイル版では最低でもPoorでないとアバターが表示されません。
 
-で、公式の情報@<bib>{VRCPerformanceRanks}によれば、Quest版アバターのランク付けについては以下の通りとなっています。
+で、公式の情報@<bib>{VRCPerformanceRanks}によれば、Android版アバターのランク付けについては以下の通りとなっています。
 
 //table[AndroidAvatarRanks][Android版のアバターランク]{
 Avatar Quality	Excellent	Good	Medium	Poor
-\--------------------------------------------------------------------------------------  
+\--------------------------------------------------------------------------------------
 Polygons	7,500	10,000	15,000	20,000
 Bounds Size1	2.5m x 2.5m x 2.5m	4m x 4m x 4m	5m x 6m x 5m	5m x 6m x 5m
 Texture Memory	10 MB	18 MB	25 MB	40 MB

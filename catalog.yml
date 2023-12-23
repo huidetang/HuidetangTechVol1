@@ -5,16 +5,17 @@ CHAPS:
   - 1_limit.re
   - 2_strategy.re
   - 3_face.re
-  - 4_blender.re
-  - 5_vcc.re
-  - 6_vrc_essential.re
-  - 7_modern_plugin.re
-  - 8_gimmick.re
-  - 9_kisekae.re
+  - 4_Hair.re
+  - 5_blender.re
+  - 6_vcc.re
+  - 7_vrc_essential.re
+  - 8_modern_plugin.re
+  - 9_gimmick.re
+  - 10_kisekae.re
 
 APPENDIX:
 
 POSTDEF:
-  - 10_postscript.re
+  - 11_postscript.re
   - bib.re
 
