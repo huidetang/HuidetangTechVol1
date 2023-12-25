@@ -11,6 +11,7 @@ VRChatのAndroid版でアバターを使うには制限@<bib>{VRCQuestLimit}が�
 で、公式の情報@<bib>{VRCPerformanceRanks}によれば、Android版アバターのランク付けについては以下の通りとなっています。
 
 //table[AndroidAvatarRanks][Android版のアバターランク]{
+//tsize[|latex|30,20,20,20,20]
 Avatar Quality	Excellent	Good	Medium	Poor
 --------------------------------------------------------------------------------------
 Polygons	7,500	10,000	15,000	20,000
@@ -21,16 +22,16 @@ Meshes	1	1	2	2
 Material Slots	1	1	2	4
 Animators	1	1	1	2
 Bones	75	90	150	150
-PhysBones@<br>{}Components2	0	4	6	8
-PhysBones@<br>{}Affected Transforms2	0	16	32	64
-PhysBones@<br>{}Colliders2	0	4	8	16
-PhysBones@<br>{}Collision Check Count2	0	16	32	64
-Avatar Dynamics@<br>{}Contacts2	2	4	8	16
+PhysBones Components2	0	4	6	8
+PhysBones Affected Transforms2	0	16	32	64
+PhysBones Colliders2	0	4	8	16
+PhysBones Collision Check Count2	0	16	32	64
+Avatar Dynamics Contacts2	2	4	8	16
 Particle Systems	0	0	0	2
-Total Particles@<br>{}Active	0	0	0	200
-Mesh Particle@<br>{}Active Polys	0	0	0	400
-Particle Trails@<br>{}Enabled	False	False	False	True
-Particle Collision@<br>{}Enabled	False	False	False	True
+Total Particles Active	0	0	0	200
+Mesh Particle Active Polys	0	0	0	400
+Particle Trails Enabled	False	False	False	True
+Particle Collision Enabled	False	False	False	True
 Trail Renderers	0	0	0	1
 Line Renderers	0	0	0	1
 //}
