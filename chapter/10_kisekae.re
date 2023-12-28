@@ -93,3 +93,5 @@ VRMをVRChat形式にコンバートする際、何も設定しない場合に�
 そこで、AvatarOptimizerのUnusedBonesByReferencesToolを活用する必要がありそうです。@<fn>{unused-bone}
 
 //footnote[unused-bone][https://note.com/efk/n/nd4611cf3e721]
+
+で、服のメッシュだけのデータが出来上がったら、あとはModular Avatarで着せた上で、服のメッシュをON/OFFできるようにしてあげれば着せかえができるようになります。
