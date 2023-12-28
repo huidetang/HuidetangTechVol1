@@ -82,11 +82,14 @@ VRMをVRChat形式にコンバートする際、何も設定しない場合に�
 なお、ボーンは現時点では敢えて消していません。
 この際に、間違えてウェイトの乗っているボーンを消すと愉快なことになるのでご注意ください。
 
+//footnote[mesh-deleter][https://booth.pm/ja/items/1501527]
+
 //image[hashira][ウェイトの乗っているボーンを消してしまって愉快なことになった例]{
 //}
 
 ただ、ボーンが多ければアバターに統合するのも難しくなってしまいます。
 なにせ、Modular Avatarのオブジェクト数の上限は255個なので、それ以上オブジェクトが多くなるとこれ以上合成できなくなってしまうのです。
 なので、いろいろと衣装を着せる際にはボーンを削る必要がありそうです。
+そこで、AvatarOptimizerのUnusedBonesByReferencesToolを活用する必要がありそうです。@<fn>{unused-bone}
 
-//footnote[mesh-deleter][https://booth.pm/ja/items/1501527]
+//footnote[unused-bone][https://note.com/efk/n/nd4611cf3e721]
