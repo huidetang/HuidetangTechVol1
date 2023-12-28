@@ -126,11 +126,13 @@ vpm add package jp.whiteflare.avatartools && `
 vpm add package yagihata.radialinventorysystem.v4 && `
 vpm add package net.narazaka.vrchat.avatar-menu-creater-for-ma && `
 vpm add package net.narazaka.vrchat.manual-baker && `
-vpm add package net.narazaka.unity.bone-tools.unused-bones-by-references-tool && `
 vpm add package jp.suzuryg.face-emo && `
 vpm add package jp.whiteflare.unlitwf && `
 vpm check project
 //}
+
+なおこちらのスクリプトは https://gist.github.com/huideyeren/994e378a89f181a29b8f432768e0db6f にありますので、適時ダウンロードして使ってください。
+また、MacやLinux環境ではpwshという、WindowsのPowerShellを移植したものがありますのでそちらも併せてインストールしてください。
 
 スクリプトの中でインストールするパッケージのリストは以下の通りです。
 なお、このリストの中にはメタカル最前線の記事@<bib>{metacul}で指定されている有用なツールが全て含まれています。
@@ -152,7 +154,6 @@ vpm check project
  * Radial Inventory System V4
  * Avatar Menu Creator for Modular Avatar
  * Manual Baker
- * UnusedBonesByReferencesTool
  * FaceEmo
  * UnlitWF_Shader
 

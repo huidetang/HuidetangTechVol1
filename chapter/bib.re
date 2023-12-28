@@ -24,6 +24,11 @@
   https://note.com/umakachan/n/n0768d611845a
 //}
 
+//bibpaper[ane-nigo][姉二号さんのQuest対応の記事]{
+  note: VRoidモデルをVRChatアバターにする - Quest対応化編 - by 姉二号@<br>{}
+  https://note.com/ne3mk2_gamevr/n/ncf35be713c7f
+//}
+
 //bibpaper[vdcm][ビデカメさんのVCCのコマンドラインインターフェースの記事]{
   Zenn: 【VRChat】VCCをCLIで使う。 by ビデカメ@<br>{}
   https://zenn.dev/ytjvdcm/articles/a5b6318b8a3995

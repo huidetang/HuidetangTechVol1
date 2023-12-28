@@ -24,7 +24,7 @@ VRMアバターのBlendShapeを開き、それぞれの表情にBlendShapeを設
 それとメッシュを分けていた人はここで要注意です。メッシュを統合しないように設定する必要があります。
 あとはPhysBoneを設定するなり、ギミックを仕込むなりお好きにどうぞ。
 
-//image[vrm-convert][VRMをVRChatで使える形式にコンバートする][scale=0.6]{
+//image[vrm-convert][VRMをVRChatで使える形式にコンバートする][scale=0.8]{
 //}
 
 ==[column] PC用とQuest用を一つのプロジェクトで使うメリット

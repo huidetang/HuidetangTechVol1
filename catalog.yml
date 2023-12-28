@@ -14,8 +14,10 @@ CHAPS:
   - 10_kisekae.re
 
 APPENDIX:
+  - 11_unity2022.re
+  - 12_vroid_beta.re
 
 POSTDEF:
-  - 11_postscript.re
+  - 13_postscript.re
   - bib.re
 
