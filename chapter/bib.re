@@ -36,8 +36,13 @@
 //}
 
 //bibpaper[no-rashomon][VRMアバターから服のデータを抜き出す方法]{
-  しびびびび: 羅生門ツールを使わずに服を取り出す@<br>{}
-  https://tomo-shi-vi.hateblo.jp/entry/20220724/1658602720
+  しびびびび: 【VRC Unity】アバターの"ボーンの削減"について調べてみた by えふか@<br>{}
+  https://note.com/efk/n/nd4611cf3e721
+//}
+
+//bibpaper[unused-bone][VRMアバターから服のデータを抜き出す方法]{
+  note: 羅生門ツールを使わずに服を取り出す@<br>{}
+  https://note.com/efk/n/nd4611cf3e721
 //}
 
 

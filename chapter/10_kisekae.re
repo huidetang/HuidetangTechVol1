@@ -90,8 +90,6 @@ VRMをVRChat形式にコンバートする際、何も設定しない場合に�
 ただ、ボーンが多ければアバターに統合するのも難しくなってしまいます。
 なにせ、Modular Avatarのオブジェクト数の上限は255個なので、それ以上オブジェクトが多くなるとこれ以上合成できなくなってしまうのです。
 なので、いろいろと衣装を着せる際にはボーンを削る必要がありそうです。
-そこで、AvatarOptimizerのUnusedBonesByReferencesToolを活用する必要がありそうです。@<fn>{unused-bone}
-
-//footnote[unused-bone][https://note.com/efk/n/nd4611cf3e721]
+そこで、AvatarOptimizerのUnusedBonesByReferencesToolを活用するなり、EditorOnlyのボーンを活用するなりする必要がありそうです。@<bib>{unused-bone}
 
 で、服のメッシュだけのデータが出来上がったら、あとはModular Avatarで着せた上で、服のメッシュをON/OFFできるようにしてあげれば着せかえができるようになります。
