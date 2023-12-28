@@ -1,5 +1,15 @@
 = はじめに
 
+//note{
+この本は2022年8月に開かれた『るいざ.tech Vol.1 Road to VRChat Quest by VRoid!!』を全面改訂したものです。
+なお、この本に出てくるスクリーンショットについてはVRChatがUnity2019からUnity2022に移行したため、Unity2019とUnity2022のものが混在しています。
+操作方法に差異は少ないと思いますが、違いがありましたら遠慮なく以下の連絡先までご連絡ください。
+
+ * X（旧TWitter）: https://twitter.com/VRCLouisa
+ * Misskey: @LouisaCharlotte@inokashiraskey.jp
+ * Mail: louisa.vrc@gmail.com
+//}
+
 イメージに合うVRChatのアバターがいないときの強い味方がVRoid Studioです。
 このVRoid Studioは無料で使え、けっこう望んだ姿のアバターを作ることができます。
 しかも、BOOTHなどで頒布されている衣装テクスチャを使えば、アバターのバリエーションはさらに広がるでしょう。
@@ -20,3 +30,4 @@
 
 よって、この本で紹介する方法で、みなさんがPCでもAndroidでも楽しめるアバターを作れるようになることを願います。
 クロスプラットフォームなアバターを、是非とも作ってみませんか？
+
