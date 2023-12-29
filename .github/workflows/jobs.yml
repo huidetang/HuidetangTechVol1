@@ -91,8 +91,8 @@ jobs:
       - name: Upload artifact.
         uses: actions/upload-artifact@v2
         with:
-          name: LouisaTechVol1Rev2.pdf
-          path: LouisaTechVol1Rev2-print.pdf
+          name: LouisaTechVol1Rev2-print.pdf
+          path: LouisaTechVol1Rev2.pdf
 
   pdf-download:
     needs: reviewdog-github-check
@@ -122,5 +122,5 @@ jobs:
       - name: Upload artifact.
         uses: actions/upload-artifact@v2
         with:
-          name: LouisaTechVol1Rev2.pdf
-          path: LouisaTechVol1Rev2-download.pdf
+          name: LouisaTechVol1Rev2-download.pdf
+          path: LouisaTechVol1Rev2.pdf
