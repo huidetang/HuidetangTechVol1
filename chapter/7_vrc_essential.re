@@ -30,6 +30,10 @@ FaceEmoについては後述します。
 //image[vrm-convert][VRMをVRChatで使える形式にコンバートする][scale=0.8]{
 //}
 
+//embed[latex]{
+\clearpage
+//}
+
 ==[column] PC用とQuest用を一つのプロジェクトで使うメリット
 
 さて、ここでlilToonを入れたことに疑問を持つ方も多いと思います。

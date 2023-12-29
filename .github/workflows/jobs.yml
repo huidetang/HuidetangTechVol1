@@ -92,7 +92,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: LouisaTechVol1Rev2.pdf
-          path: LouisaTechVol1Rev2.pdf
+          path: LouisaTechVol1Rev2-print.pdf
 
   pdf-download:
     needs: reviewdog-github-check
@@ -123,4 +123,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: LouisaTechVol1Rev2.pdf
-          path: LouisaTechVol1Rev2.pdf
+          path: LouisaTechVol1Rev2-download.pdf
