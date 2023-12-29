@@ -50,6 +50,15 @@
   https://note.com/efk/n/nd4611cf3e721
 //}
 
+//bibpaper[takana][Unity2022を攻略しよう！]{
+  taka7nさんの資料「Unity2022を攻略しよう！」より@<br>{}
+  https://x.com/taka7n_vrc/status/1733413182088384794
+//}
+
+//bibpaper[vroid-beta][着せ替え機能公式発表]{
+  VRoid公式発表: ベータ版による着せ替え機能の提供@<br>{}
+  https://vroid.com/news/7sDa0w0L2hA8v3kUPJ8iKp
+//}
 
 //embed[latex]{
 \end{thebibliography}
