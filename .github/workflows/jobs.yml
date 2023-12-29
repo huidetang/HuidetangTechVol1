@@ -61,7 +61,7 @@ jobs:
 
   pdf:
     needs: reviewdog-github-check
-    name: Make PDF
+    name: Make PDF for print
     runs-on: ubuntu-latest
     container:
       image: huideyeren/review
@@ -86,6 +86,37 @@ jobs:
         run: pwd | python3 grayscaling.py >> .grayscaling.log
       - name: Show .grayscaling.log
         run: cat .grayscaling.log
+      - name: Build PDF.
+        run: bundle exec rake clean pdf
+      - name: Upload artifact.
+        uses: actions/upload-artifact@v2
+        with:
+          name: LouisaTechVol1Rev2.pdf
+          path: LouisaTechVol1Rev2.pdf
+
+  pdf-download:
+    needs: reviewdog-github-check
+    name: Make PDF for eBook
+    runs-on: ubuntu-latest
+    container:
+      image: huideyeren/review
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: Install gems.
+        run: bundle install
+      - name: Copy plantuml.
+        run: cp /java/plantuml.jar .
+      - name: Check tools
+        run: dot -V && blockdiag --version && java -jar plantuml.jar -version
+      - name: convert PlantUML
+        run: pwd | bash ./plantuml.sh >> .plantuml.log
+      - name: Show .plantuml.log
+        run: cat .plantuml.log
+      - name: Convert SVG to PDF
+        run: pwd | python3 svg.py >> .svg.log
+      - name: Show .svg.log
+        run: cat .svg.log
       - name: Build PDF.
         run: bundle exec rake clean pdf
       - name: Upload artifact.
