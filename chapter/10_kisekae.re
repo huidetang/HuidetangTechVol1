@@ -90,7 +90,7 @@ VRMをVRChat形式にコンバートする際、何も設定しない場合に�
 
 //footnote[mesh-deleter][https://booth.pm/ja/items/1501527]
 
-//image[hashira][ウェイトの乗っているボーンを消してしまって愉快なことになった例][scale=0.3]{
+//image[hashira][ウェイトの乗っているボーンを消してしまって愉快なことになった例][scale=0.5]{
 //}
 
 ただ、ボーンが多ければアバターに統合するのも難しくなってしまいます。
@@ -102,7 +102,7 @@ VRMをVRChat形式にコンバートする際、何も設定しない場合に�
 
 実際にModular Avatarを使って着せてみたのが次の写真になります。
 
-//image[sailor-and-cheer][VRoidでのModular Avatar着せ替えの実例][scale=0.3]{
+//image[sailor-and-cheer][VRoidでのModular Avatar着せ替えの実例][scale=0.5]{
 //}
 
 上半身はセーラー服ですが、下半身はチアリーダーのユニフォームのスカートを着ています。
@@ -114,7 +114,7 @@ VRMをVRChat形式にコンバートする際、何も設定しない場合に�
 
 Modular Avatarの力を借りれば、非対応衣装を着せることも可能です。
 
-//image[louisa-kikyo-china][桔梗ちゃん用衣装をVRoidアバターに着せた例][scale=0.3]{
+//image[louisa-kikyo-china][桔梗ちゃん用衣装をVRoidアバターに着せた例][scale=0.5]{
 //}
 
 これは桔梗ちゃん用のチャイナ服をVRoidアバターに着せた例です。
@@ -122,7 +122,7 @@ Modular Avatarの力を借りれば、非対応衣装を着せることも可能
 私が使ったキセテネはModular Avatar対応前のものでしたが、今はModular Avatar対応版@<fn>{kisetene-ma}が登場し、Modular Avatarで使えるようにPrefab状態の衣装をサイズ調整できるようになっています。
 そして、これもチャイナ服の表示・非表示を切り替えるメニューを付けています。
 
-//image[rusk-vroid][VRoid衣装をラスクちゃんに着せた例][scale=0.6]{
+//image[rusk-vroid][VRoid衣装をラスクちゃんに着せた例][scale=0.8]{
 //}
 
 同様に、ラスクちゃんにVRoid衣装を着せることも可能です。

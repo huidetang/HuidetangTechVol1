@@ -10,7 +10,7 @@ VRChatのAndroid版でアバターを使うには制限@<bib>{VRCQuestLimit}が�
 
 で、公式の情報@<bib>{VRCPerformanceRanks}によれば、Android版アバターのランク付けについては以下の通りとなっています。
 
-//image[android-limit][Android版アバターのランク付け][scale=0.4]{
+//image[android-limit][Android版アバターのランク付け][scale=0.7]{
 //}
 
 なお、Android版で初期状態で見えるランクはMediumであり、使っているアバターがMediumランクに対応していればAndroidの人から初期状態で見えることになります。

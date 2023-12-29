@@ -22,18 +22,18 @@ Fallbackアバターを目指す場合、ショートヘアにした上でこれ
 
 デフォルトのPC版では、このように髪の揺れ方が設定されています。
 
-//image[pc-maegami][PC版の前髪設定][scale=0.4]{
+//image[pc-maegami][PC版の前髪設定][scale=0.6]{
 //}
 
-//image[pc-ushirogami][PC版の後ろ設定][scale=0.4]{
+//image[pc-ushirogami][PC版の後ろ設定][scale=0.6]{
 //}
 
 私のAndroid版では、前髪は2つのグループに、後ろ髪は1つのグループにまとめています。
 
-//image[android-maegami][PC版の前髪設定][scale=0.4]{
+//image[android-maegami][PC版の前髪設定][scale=0.6]{
 //}
 
-//image[android-ushirogami][PC版の後ろ設定][scale=0.4]{
+//image[android-ushirogami][PC版の後ろ設定][scale=0.6]{
 //}
 
 これらの設定は、ボーンのグループ数を減らすことで設定できます。
