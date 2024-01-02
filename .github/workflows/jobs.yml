@@ -145,7 +145,7 @@ jobs:
       - name: Show .plantuml.log
         run: cat .plantuml.log
       - name: Build EPUB.
-        run: REVIEW_CONFIG_FILE=config-epub.yml REVIEW_CATALOG_FILE=catalog-download.yml bundle exec rake epub
+        run: bundle exec rake epub
       - name: Upload artifact.
         uses: actions/upload-artifact@v3
         with:
